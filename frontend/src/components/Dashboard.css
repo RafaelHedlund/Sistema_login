@@ -1,0 +1,511 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header/Navbar */
+.dashboard-header {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.dashboard-header-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.dashboard-header-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dashboard-header-button:hover {
+    background-color: #0056b3;
+}
+
+/* Container principal */
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 20px 40px;
+    gap: 30px;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+    margin-top: 60px;
+}
+
+/* Painel esquerdo (20% - Informações do usuário e botões) */
+.dashboard-user-info {
+    width: 20%;
+    min-width: 300px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard-user-info img {
+    max-width: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid #007bff;
+}
+
+.dashboard-user-info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dashboard-user-info p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Botões de ação */
+.dashboard-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.dashboard-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.dashboard-button:hover {
+    background-color: #0056b3;
+}
+
+/* Painel direito (70% - Produtos) */
+.dashboard-panel {
+    width: 80%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 400px;
+}
+
+/* Bloco de produtos */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    min-height: 300px;
+}
+
+.dashboard-product-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    width: calc(23% - 20px);
+    box-sizing: border-box;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dashboard-product-card:hover {
+    transform: translateY(-5px);
+}
+
+.dashboard-product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.dashboard-product-card h3 {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.dashboard-product-card p {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.dashboard-product-card .price {
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Botão "Adicionar ao Carrinho" */
+.dashboard-product-card button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dashboard-product-card button:hover {
+    background-color: #747474;
+}
+
+/* Mensagem quando não há produtos */
+.no-products {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 50px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal do Carrinho */
+.carrinho-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    width: 400px;
+    max-width: 90%;
+}
+
+.carrinho-modal h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.carrinho-modal ul {
+    list-style: none;
+    padding: 0;
+}
+
+.carrinho-modal ul li {
+    margin-bottom: 10px;
+}
+
+.carrinho-modal button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.carrinho-modal button:hover {
+    background-color: #0056b3;
+}
+
+/* Overlay para o modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+/* Bloco do carrinho */
+.carrinho-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carrinho-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.carrinho-item-info {
+    flex: 1;
+    text-align: left;
+}
+
+.carrinho-item-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.carrinho-item-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Botão para remover item do carrinho */
+.remove-button {
+    background-color: #f00f25;
+    color: rgb(255, 0, 0);
+    border: none;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.remove-button:hover {
+    background-color: #c82333;
+}
+
+/* Navegação entre páginas */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+.pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.pagination button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+/* Remover o texto "Página X" */
+.pagination span {
+    display: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+        padding: 80px 10px 20px;
+    }
+
+    .dashboard-user-info,
+    .dashboard-panel {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .dashboard-product-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-product-card {
+        width: 100%;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.2rem;
+    }
+
+    .dashboard-header-buttons {
+        gap: 5px;
+    }
+
+    .dashboard-header-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}
+
+/* Estilos personalizados para o toast */
+.Toastify__toast {
+    font-family: 'Poppins', sans-serif;
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Toastify__toast--success {
+    background-color: #28a745;
+    color: white;
+}
+
+.Toastify__toast--error {
+    background-color: #dc3545;
+    color: white;
+}
+
+.Toastify__toast--info {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.Toastify__toast--warning {
+    background-color: #ffc107;
+    color: black;
+}
+
+/* Estilo personalizado para o botão de fechar */
+.Toastify__close-button {
+    color: white;
+    font-size: 14px;
+    padding: 4px;
+    align-self: flex-start;
+}
+
+.Toastify__close-button:hover {
+    color: #ccc;
+}
+
+.Toastify__progress-bar {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Modal de descrição completa */
+.descricao-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1002;
+    width: 400px;
+    max-width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.descricao-modal h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.descricao-modal p {
+    font-size: 1rem;
+    color: #555;
+    margin: 10px 0;
+}
+
+.descricao-modal button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.descricao-modal button:hover {
+    background-color: #0056b3;
+}
