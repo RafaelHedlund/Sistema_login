@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 
-const SECRET_KEY = "segredo123"; // Substitua por uma chave mais segura
+const SECRET_KEY = "segredo123";
 const app = express();
 
 app.use(express.json());
@@ -15,8 +15,8 @@ app.use(cors());
 // Conectar ao MySQL
 const db = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "123456",
+    user: "",
+    password: "",
     database: "sistema_login",
 });
 
@@ -116,13 +116,13 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage }); // <-- Isso cria a variável upload
 
-// Criando um endpoint para upload de imagens
+
 // Corrigindo o upload para aceitar o id
 app.post("/upload/:id", upload.single("imagem"), (req, res) => {
-    console.log("Imagem recebida:", req.file); // Verifique se a imagem está sendo recebida
-    const userId = req.params.id;  // Acessa o id do usuário
-    const imagePath = `/uploads/${req.file.filename}`;  // Caminho da imagem salva
-    console.log("Caminho da imagem:", imagePath); // Verifique se o caminho está correto
+    console.log("Imagem recebida:", req.file); 
+    const userId = req.params.id;  
+    const imagePath = `/uploads/${req.file.filename}`;  
+    console.log("Caminho da imagem:", imagePath); 
 
     db.query("UPDATE usuarios SET imagem = ? WHERE id = ?", [imagePath, userId], (err, result) => {
         if (err) {
@@ -134,7 +134,7 @@ app.post("/upload/:id", upload.single("imagem"), (req, res) => {
     });
 });
 
-// Criando um endpoint para buscar a imagem de um usuário
+// endpoint para buscar a imagem de um usuário
 app.get("/imagem/:id", (req, res) => {
     const id = req.params.id;
 
@@ -151,12 +151,12 @@ app.get("/imagem/:id", (req, res) => {
             return;
         }
 
-        // A imagem é servida da pasta uploads dentro do backend
+       
         res.sendFile(path.join(__dirname, result[0].imagem));
     });
 });
 
-// Servindo os arquivos da pasta uploads de forma acessível pela web
+
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Iniciando o servidor
