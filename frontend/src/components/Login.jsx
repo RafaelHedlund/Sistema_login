@@ -3,7 +3,7 @@ import { login } from '../api';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Login.css'; // Importando o CSS específico para o Login
+import './Login.css';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -19,8 +19,8 @@ const Login = () => {
 
       // Exibe o toast de sucesso no meio da tela
       toast.success('Login realizado com sucesso!', {
-        position: 'top-center', // Centralizado no topo
-        autoClose: 2000, // Fecha após 2 segundos
+        position: 'top-center', 
+        autoClose: 2000, 
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -28,7 +28,7 @@ const Login = () => {
         progress: undefined,
       });
 
-      // Redireciona para o dashboard após 2 segundos
+      // Redireciona para o dashboard
       setTimeout(() => {
         navigate('/dashboard');
       }, 2000);
@@ -62,7 +62,7 @@ const Login = () => {
 
       {/* Container do Toastify */}
       <ToastContainer
-        position="top-center" // Centralizado no topo
+        position="top-center" 
         autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
