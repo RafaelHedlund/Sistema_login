@@ -3,7 +3,7 @@ import { register } from '../api';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './Register.css'; // Importando o CSS específico para o Register
+import './Register.css'; 
 
 const Register = () => {
   const [nome, setNome] = useState('');
@@ -32,8 +32,8 @@ const Register = () => {
 
       // Exibe o toast de sucesso no meio da tela
       toast.success('Registro realizado com sucesso!', {
-        position: 'top-center', // Centralizado no topo
-        autoClose: 2000, // Fecha após 2 segundos
+        position: 'top-center', 
+        autoClose: 2000, 
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -90,7 +90,7 @@ const Register = () => {
 
       {/* Container do Toastify */}
       <ToastContainer
-        position="top-center" // Centralizado no topo
+        position="top-center" 
         autoClose={2000}
         hideProgressBar={false}
         newestOnTop={false}
