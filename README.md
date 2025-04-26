@@ -121,36 +121,3 @@ O projeto consiste em uma aplicação web que permite aos usuários:
 Autenticação: JWT (JSON Web Tokens).
 API Fake: FakeStore API.
 
-10. Dependências do Frontend
-Aqui estão as dependências do frontend/package.json:
-
-{
-  "name": "frontend",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "@fortawesome/react-fontawesome": "^0.2.2",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-toastify": "^11.0.5"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.21.0",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.21.0",
-    "eslint-plugin-react-hooks": "^5.1.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^15.15.0",
-    "vite": "^6.2.0"
-  }
-}
